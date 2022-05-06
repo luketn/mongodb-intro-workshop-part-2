@@ -3,12 +3,17 @@ Follow on to mongodb-intro-workshop.
 
 Discuss mongodb performance.  
 
-Indexes: think about trees, size, in-memory vs disk, number of indexes, query planner.  
+Indexes: How is an index stored - b-trees, size, in-memory vs disk, number of indexes, query planner.  
 
 Sorting. In memory vs indexed.  
 https://www.mongodb.com/docs/manual/tutorial/sort-results-with-indexes/?jmp=university
 
-Using explain().  
+Using explain(), e.g.  
+
+```
+
+```
+
 
 Take a large dataset and query it in optimal and non-optimal ways. Show the effects of different indexes. Discuss the importance of 
 
