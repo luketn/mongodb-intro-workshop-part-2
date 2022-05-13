@@ -15,9 +15,9 @@ db.someCollection.find({some: 'thing'}).sort({some:-1}).limit(5).explain('execut
 
 Query planner selection process and execution - examine what the engine does on a local copy of the DB by watching the log output with a higher log level:
 ```
-db.setLogLevel(5, 'query')
+db.setLogLevel(5)
 db.someCollection.find({"some" : "thing"})
-db.setLogLevel(-1, 'query')
+db.setLogLevel(-1)
 ```
 
 
