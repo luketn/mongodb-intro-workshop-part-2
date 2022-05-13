@@ -13,6 +13,13 @@ Using explain(), e.g.
 db.someCollection.find({some: 'thing'}).sort({some:-1}).limit(5).explain('executionStats');
 ```
 
+Query planner selection process and execution - examine what the engine does on a local copy of the DB by watching the log output with a higher log level:
+```
+db.setLogLevel(5, 'query')
+db.someCollection.find({"some" : "thing"})
+db.setLogLevel(-1, 'query')
+```
+
 
 Take a large dataset and query it in optimal and non-optimal ways. Show the effects of different indexes. Discuss the importance of hot indexes being kept in RAM (smaller indexes are more likely to fit in RAM and stay in RAM).
 
