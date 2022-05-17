@@ -1,6 +1,13 @@
 # mongodb-performance-workshop
 Follow on to mongodb-intro-workshop.
 
+## Examining Performance
+
+### Tools
+
+... todo - list of tools for examining performance in mongo ...
+
+
 Discuss mongodb performance.  
 
 Indexes: How is an index stored - b-trees, size, in-memory vs disk, number of indexes, query planner.  
