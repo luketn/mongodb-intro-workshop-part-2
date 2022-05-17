@@ -10,7 +10,8 @@ Follow on to mongodb-intro-workshop.
 
 Discuss mongodb performance.  
 
-Indexes: How is an index stored - b-trees, size, in-memory vs disk, number of indexes, query planner.  
+### Indexes
+-> link indexes.md
 
 Sorting. In memory vs indexed.  
 https://www.mongodb.com/docs/manual/tutorial/sort-results-with-indexes/?jmp=university
