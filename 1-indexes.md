@@ -133,7 +133,10 @@ And if you want ordered by rank:
 db.fruits.find({$text: {$search: "juicy delicious"}}, {score: {$meta: "textScore"}}).sort({score: {$meta: "textScore"}})
 ```
 
+When to use:
+- When you have a simple text search to implement
+- Sparingly! (see comments on compound and multi-key indexes)
 
-
-
+For more advanced (and better) results on Atlas you can use the Atlas Search (Lucene indexed) feature which is awesome and has lots of good capabilities:
+https://www.mongodb.com/atlas/search
 
