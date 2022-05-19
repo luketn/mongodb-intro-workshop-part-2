@@ -106,6 +106,34 @@ i.e. in the example above, the query must state $gt: 3 for the index to be used:
 db.col.find({grade: {$gt: 3}})
 ```
 
+#### Text Indexes
+A text index tokenises a string field into words using the unicode word delimiters. 
+Ref: https://www.mongodb.com/docs/manual/core/index-text/
+
+This is similar to the multi-key index, in that the words split from the original string field are essentially turned into an array of strings (lower-cased).
+
+The search does a logical OR on the words queried with the words in the index.
+
+e.g. 
+Create these documents:
+```
+db.fruits.insert({fruit: "Apple", description:"Crisp, crunchy and delicious"})
+db.fruits.insert({fruit: "Orange", description:"Tart, juicy and delicious"})
+```
+Create this index:
+```
+db.fruits.createIndex({description: 'text'}, {name: 'text_search'})
+```
+Query it like this:
+```
+db.fruits.find({$text: {$search: "Juicy"}})
+```
+And if you want ordered by rank:
+```
+db.fruits.find({$text: {$search: "juicy delicious"}}, {score: {$meta: "textScore"}}).sort({score: {$meta: "textScore"}})
+```
+
+
 
 
 
