@@ -11,10 +11,11 @@ The simplest, and fastest, index is on a single scalar value. e.g.
 }
 ```
 
-What's great about these, is that they are very compact, have no complexity regarding sorting and can are extremely fast to query.
+What's great about these, is that they are very compact, have no complexity regarding sorting and can are extremely fast to query and to update.
 
 When to use: 
 - when you have a common query which uses only a single field
+- when performance for writes is crucial
 
 
 #### Compound Indexes
@@ -29,16 +30,19 @@ A compound index is an index over multiple scalar value fields. e.g.
 
 A compound index is very powerful - but also carries some complexity and risks. 
 
-Using a compound index you can perform both query filtering and sorting using multiple fields. The order of each field in the index is very 
-significant though, and can cause the index to be useful or not. 
+Using a compound index you can perform both query filtering and sorting using multiple fields. The order of each field in the index is very significant though, and can cause the index to be useful or not. 
 
-One of the worst performing operations in MongoDB is an in-memory sort. In the example index above, note that the createdDate is the second 
-field in the index. Because of the index traversal possible on the leaf nodes of the tree, a $gt (greater than) or an exact date query can 
-both be used on the date to filter to index keys in which to search for a name value. 
+One of the worst performing operations in MongoDB is an in-memory sort. In the example index above, note that the createdDate is the second field in the index. Because of the index traversal possible on the leaf nodes of the tree, a $gt (greater than) or an exact date query can both be used on the date to filter to index keys in which to search for a name value. 
+
+Because the b-tree in a compound index can be very deep, it can also slow down insert, update and delete operations which all have to modify the tree. Especially when the tree needs to be rebalanced and split these operations take time.
+
+Be careful about having too many compound indexes on a single collection. They are expensive and cause a lot of work for the database.
 
 When to use:
 - when you have multiple fields to query
 - when you have one or more fields to query, followed by a field to sort on
+- when write performance is less critical than read performance (e.g. when you read more often than write)
+- when you have plenty of overhead in memory (allowing the index to be fully loaded into RAM) and plenty of overhead in CPU (allowing complex operations to be performed on the indexes - sorting and rebalancing trees)
 
 
 #### Multi-Key Indexes
@@ -69,6 +73,7 @@ When to use:
 - Sparingly!
 - When you have an embedded array of scalar values, or an array of subdocuments from which you want to index a particular field
 - When you want to manually tokenize another field(s) and create a searchable array of values from it
+- The same concerns as compound indexes also apply
 
 WARNING: Be very careful with this - you can easily wind up creating huge indexes, which may remove or reduce the value of the index in
 the first place if it is so large it doesn't stay in memory and takes a long time to load from disk and then search through.
@@ -100,6 +105,7 @@ i.e. in the example above, the query must state $gt: 3 for the index to be used:
 ```
 db.col.find({grade: {$gt: 3}})
 ```
+
 
 
 
