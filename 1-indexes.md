@@ -3,6 +3,10 @@ What's a MongoDB index? A b-tree in which the leaf nodes are also like a sorted 
 ![image](https://user-images.githubusercontent.com/1756555/168875467-a6eaed01-5f3c-49ce-9d7d-5a3fdff8959a.png)
 Ref: https://www.dbkoda.com/blog/2017/10/06/Effective-MongoDB-indexing
 
+
+### Equality Sort Range (ESR) Rule
+The ESR rule is about composing indexes. You should always order the fields in an index in that order so that the index can be used efficiently for querying as well as sorting and range queries. 
+
 #### Simple (single-field) Indexes
 The simplest, and fastest, index is on a single scalar value. e.g.  
 ```
