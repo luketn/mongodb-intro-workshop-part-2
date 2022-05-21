@@ -1,4 +1,10 @@
 # Tools for MongoDB Performance
+There are two broad categories of performance tools. If you're using a local cluster vs using an Atlas cloud or on-prem Enterprise cluster.
+
+## Tools
+
+### explain()
+The main tool I use for performance optimization is the explain() function.
 
 Using explain(), e.g.  
 ```
