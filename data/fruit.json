@@ -1,275 +1,431 @@
 [
   {
-    "supplierId": 1,
+    "supplierId": 0,
     "name": "Apple",
     "description": "A common, round fruit produced by the tree Malus domestica, cultivated in temperate climates.",
-    "price": 4.97,
-    "quantity": 133
+    "price": 4.18,
+    "quantity": 133,
+    "keys": [
+      "apple",
+      "common"
+    ]
+  },
+  {
+    "supplierId": 3,
+    "name": "Apricot",
+    "description": "A round sweet and juicy stone fruit, resembling peach or plum in taste, with a yellow-orange flesh, lightly fuzzy skin and a large seed inside.",
+    "price": 5.57,
+    "quantity": 175,
+    "keys": [
+      "apricot",
+      "round"
+    ]
+  },
+  {
+    "supplierId": 2,
+    "name": "Avocado",
+    "description": "The large, usually yellowish-green or black, pulpy fruit of the avocado tree.",
+    "price": 5.60,
+    "quantity": 182,
+    "keys": [
+      "avocado",
+      "large"
+    ]
   },
   {
     "supplierId": 0,
-    "name": "Apricot",
-    "description": "A round sweet and juicy stone fruit, resembling peach or plum in taste, with a yellow-orange flesh, lightly fuzzy skin and a large seed inside.",
-    "price": 5.13,
-    "quantity": 175
-  },
-  {
-    "supplierId": 1,
-    "name": "Avocado",
-    "description": "The large, usually yellowish-green or black, pulpy fruit of the avocado tree.",
-    "price": 5.55,
-    "quantity": 182
-  },
-  {
-    "supplierId": 1,
     "name": "Banana",
     "description": "An elongated curved tropical fruit that grows in bunches and has a creamy flesh and a smooth skin.",
     "price": 5.65,
-    "quantity": 187
+    "quantity": 187,
+    "keys": [
+      "banana",
+      "elongated"
+    ]
   },
   {
     "supplierId": 0,
     "name": "Bilberry",
     "description": "Vaccinium myrtillus, the wild European blueberry of the cowberry family.",
-    "price": 5.48,
-    "quantity": 160
+    "price": 5.74,
+    "quantity": 160,
+    "keys": [
+      "bilberry",
+      "myrtillus"
+    ]
   },
   {
-    "supplierId": 1,
+    "supplierId": 0,
     "name": "Blackberry",
     "description": "A fruit-bearing shrub of the species Rubus fruticosus and some hybrids.",
-    "price": 4.81,
-    "quantity": 178
+    "price": 4.56,
+    "quantity": 178,
+    "keys": [
+      "blackberry",
+      "fruit-bearing"
+    ]
   },
   {
-    "supplierId": 2,
+    "supplierId": 0,
     "name": "Blackcurrant",
     "description": "A shrub, Ribes nigrum, that produces small, very dark purple, edible berries.",
-    "price": 5.30,
-    "quantity": 102
+    "price": 5.54,
+    "quantity": 102,
+    "keys": [
+      "blackcurrant",
+      "shrub"
+    ]
   },
   {
     "supplierId": 0,
     "name": "Blueberry",
     "description": "An edible round berry, belonging to the cowberry group (Vaccinium sect. Cyanococcus), with flared crowns at the end, that turns blue on ripening.",
-    "price": 6.97,
-    "quantity": 156
+    "price": 6.55,
+    "quantity": 156,
+    "keys": [
+      "blueberry",
+      "edible"
+    ]
   },
   {
     "supplierId": 3,
     "name": "Cantaloupe",
     "description": "A melon of species Cucumis melo subsp. melo with sweet orange flesh, with numerous cultivars in several cultivar groups.",
-    "price": 4.72,
-    "quantity": 138
-  },
-  {
-    "supplierId": 2,
-    "name": "Currant",
-    "description": "A small dried grape, usually the Black Corinth grape, rarely more than 4mm diameter when dried.",
-    "price": 5.96,
-    "quantity": 194
+    "price": 4.30,
+    "quantity": 138,
+    "keys": [
+      "cantaloupe",
+      "melon"
+    ]
   },
   {
     "supplierId": 1,
-    "name": "Cherry",
-    "description": "A small fruit, usually red, black or yellow, with a smooth hard seed and a short hard stem.",
-    "price": 5.40,
-    "quantity": 182
+    "name": "Currant",
+    "description": "A small dried grape, usually the Black Corinth grape, rarely more than 4mm diameter when dried.",
+    "price": 5.51,
+    "quantity": 194,
+    "keys": [
+      "currant",
+      "small"
+    ]
   },
   {
-    "supplierId": 2,
+    "supplierId": 3,
+    "name": "Cherry",
+    "description": "A small fruit, usually red, black or yellow, with a smooth hard seed and a short hard stem.",
+    "price": 5.48,
+    "quantity": 182,
+    "keys": [
+      "cherry",
+      "small"
+    ]
+  },
+  {
+    "supplierId": 0,
     "name": "Clementine",
     "description": "A type of small, sweet orange, the result of a cross between a tangerine and Seville orange.",
-    "price": 3.10,
-    "quantity": 165
+    "price": 3.79,
+    "quantity": 165,
+    "keys": [
+      "clementine",
+      "type"
+    ]
   },
   {
     "supplierId": 2,
     "name": "Damson",
     "description": "A subspecies of plum tree, Prunus domestica subsp. insititia, native to Eurasia.",
-    "price": 2.00,
-    "quantity": 164
+    "price": 1.82,
+    "quantity": 164,
+    "keys": [
+      "damson",
+      "subspecies"
+    ]
   },
   {
-    "supplierId": 0,
+    "supplierId": 3,
     "name": "Eggplant",
     "description": "The plant Solanum melongena.",
-    "price": 6.53,
-    "quantity": 189
+    "price": 6.85,
+    "quantity": 189,
+    "keys": [
+      "eggplant",
+      "plant"
+    ]
   },
   {
-    "supplierId": 2,
+    "supplierId": 1,
     "name": "Elderberry",
     "description": "The elder; a shrub or tree of the genus Sambucus.",
-    "price": 3.55,
-    "quantity": 189
+    "price": 3.31,
+    "quantity": 189,
+    "keys": [
+      "elderberry",
+      "elder;"
+    ]
   },
   {
     "supplierId": 3,
     "name": "Feijoa",
     "description": "A South American evergreen shrub, Acca sellowiana (syn. Feijoa sellowiana).",
-    "price": 2.31,
-    "quantity": 198
+    "price": 2.30,
+    "quantity": 198,
+    "keys": [
+      "feijoa",
+      "south"
+    ]
   },
   {
     "supplierId": 1,
     "name": "Gooseberry",
     "description": "A fruit, Ribes uva-crispa, related to the currant.",
-    "price": 2.65,
-    "quantity": 141
-  },
-  {
-    "supplierId": 1,
-    "name": "Grape",
-    "description": "A small, round, smooth-skinned edible fruit, usually purple, red, or green, that grows in bunches on vines of genus Vitis.",
-    "price": 2.36,
-    "quantity": 101
+    "price": 2.29,
+    "quantity": 141,
+    "keys": [
+      "gooseberry",
+      "fruit"
+    ]
   },
   {
     "supplierId": 2,
-    "name": "Grapefruit",
-    "description": "The tree of the species Citrus paradisi, a hybrid of pomelo (Citrus maxima) and sweet orange.",
-    "price": 5.11,
-    "quantity": 199
+    "name": "Grape",
+    "description": "A small, round, smooth-skinned edible fruit, usually purple, red, or green, that grows in bunches on vines of genus Vitis.",
+    "price": 2.16,
+    "quantity": 101,
+    "keys": [
+      "grape",
+      "small"
+    ]
   },
   {
     "supplierId": 0,
-    "name": "Guava",
-    "description": "A tropical tree or shrub of the myrtle family, Psidium guajava.",
-    "price": 1.42,
-    "quantity": 160
-  },
-  {
-    "supplierId": 3,
-    "name": "Jackfruit",
-    "description": "A tree, Artocarpus heterophyllus, of the Moraceae family, which produces edible fruit.",
-    "price": 6.03,
-    "quantity": 181
+    "name": "Grapefruit",
+    "description": "The tree of the species Citrus paradisi, a hybrid of pomelo (Citrus maxima) and sweet orange.",
+    "price": 5.40,
+    "quantity": 199,
+    "keys": [
+      "grapefruit",
+      "tree"
+    ]
   },
   {
     "supplierId": 1,
+    "name": "Guava",
+    "description": "A tropical tree or shrub of the myrtle family, Psidium guajava.",
+    "price": 1.90,
+    "quantity": 160,
+    "keys": [
+      "guava",
+      "tropical"
+    ]
+  },
+  {
+    "supplierId": 2,
+    "name": "Jackfruit",
+    "description": "A tree, Artocarpus heterophyllus, of the Moraceae family, which produces edible fruit.",
+    "price": 6.63,
+    "quantity": 181,
+    "keys": [
+      "jackfruit",
+      "tree"
+    ]
+  },
+  {
+    "supplierId": 0,
     "name": "Kumquat",
     "description": "A small, orange citrus-like fruit which is native to Asia (Citrus japonica, syn. Fortunella japonica).",
-    "price": 2.02,
-    "quantity": 198
+    "price": 2.22,
+    "quantity": 198,
+    "keys": [
+      "kumquat",
+      "small"
+    ]
   },
   {
     "supplierId": 2,
     "name": "Legume",
     "description": "The fruit or seed of leguminous plants (as peas or beans) used for food.",
-    "price": 6.73,
-    "quantity": 199
+    "price": 6.94,
+    "quantity": 199,
+    "keys": [
+      "legume",
+      "fruit"
+    ]
   },
   {
     "supplierId": 3,
     "name": "Lemon",
     "description": "A yellowish citrus fruit.",
-    "price": 3.13,
-    "quantity": 120
+    "price": 3.27,
+    "quantity": 120,
+    "keys": [
+      "lemon",
+      "yellowish"
+    ]
   },
   {
-    "supplierId": 0,
+    "supplierId": 2,
     "name": "Lychee",
     "description": "The Chinese tropical fruit tree Litchi chinensis, of the soapberry family.",
-    "price": 6.47,
-    "quantity": 120
+    "price": 6.17,
+    "quantity": 120,
+    "keys": [
+      "lychee",
+      "chinese"
+    ]
   },
   {
     "supplierId": 2,
     "name": "Mango",
     "description": "A tropical Asian fruit tree, Mangifera indica.",
-    "price": 6.32,
-    "quantity": 131
+    "price": 6.63,
+    "quantity": 131,
+    "keys": [
+      "mango",
+      "tropical"
+    ]
   },
   {
     "supplierId": 0,
     "name": "Nectarine",
     "description": "A cultivar of the peach distinguished by its skin being smooth, not fuzzy.",
-    "price": 1.41,
-    "quantity": 128
+    "price": 1.11,
+    "quantity": 128,
+    "keys": [
+      "nectarine",
+      "cultivar"
+    ]
   },
   {
     "supplierId": 0,
     "name": "Orange",
     "description": "An evergreen tree of the genus Citrus such as Citrus sinensis.",
-    "price": 6.13,
-    "quantity": 142
-  },
-  {
-    "supplierId": 1,
-    "name": "Peach",
-    "description": "A particular rock found in tin mines, sometimes associated with chlorite.",
-    "price": 6.12,
-    "quantity": 179
+    "price": 6.59,
+    "quantity": 142,
+    "keys": [
+      "orange",
+      "evergreen"
+    ]
   },
   {
     "supplierId": 3,
-    "name": "Pear",
-    "description": "An edible fruit produced by the pear tree, similar to an apple but elongated towards the stem.",
-    "price": 3.31,
-    "quantity": 102
-  },
-  {
-    "supplierId": 2,
-    "name": "Pomegranate",
-    "description": "A fruit-bearing shrub or small tree, Punica granatum.",
-    "price": 5.32,
-    "quantity": 112
+    "name": "Peach",
+    "description": "A particular rock found in tin mines, sometimes associated with chlorite.",
+    "price": 6.02,
+    "quantity": 179,
+    "keys": [
+      "peach",
+      "particular"
+    ]
   },
   {
     "supplierId": 0,
-    "name": "Raisin",
-    "description": "A dried grape.",
-    "price": 4.91,
-    "quantity": 111
+    "name": "Pear",
+    "description": "An edible fruit produced by the pear tree, similar to an apple but elongated towards the stem.",
+    "price": 3.54,
+    "quantity": 102,
+    "keys": [
+      "pear",
+      "edible"
+    ]
   },
   {
-    "supplierId": 1,
+    "supplierId": 0,
+    "name": "Pomegranate",
+    "description": "A fruit-bearing shrub or small tree, Punica granatum.",
+    "price": 5.13,
+    "quantity": 112,
+    "keys": [
+      "pomegranate",
+      "fruit-bearing"
+    ]
+  },
+  {
+    "supplierId": 3,
+    "name": "Raisin",
+    "description": "A dried grape.",
+    "price": 4.50,
+    "quantity": 111,
+    "keys": [
+      "raisin",
+      "dried"
+    ]
+  },
+  {
+    "supplierId": 3,
     "name": "Rambutan",
     "description": "A tree, Nephelium lappaceum, of Southeast Asia.",
-    "price": 6.80,
-    "quantity": 145
+    "price": 6.87,
+    "quantity": 145,
+    "keys": [
+      "rambutan",
+      "tree"
+    ]
   },
   {
     "supplierId": 3,
     "name": "Redcurrant",
     "description": "A deciduous shrub, Ribes rubrum, native to western Europe; any of certain cultivars of the shrub.",
-    "price": 3.57,
-    "quantity": 190
+    "price": 3.41,
+    "quantity": 190,
+    "keys": [
+      "redcurrant",
+      "deciduous"
+    ]
   },
   {
-    "supplierId": 0,
+    "supplierId": 3,
     "name": "Satsuma",
     "description": "A seedless and easy-peeling cultivar of mandarin orange of Japanese origin; Citrus unshiu.",
-    "price": 1.03,
-    "quantity": 197
+    "price": 1.17,
+    "quantity": 197,
+    "keys": [
+      "satsuma",
+      "seedless"
+    ]
   },
   {
     "supplierId": 3,
     "name": "Strawberry",
     "description": "The sweet, usually red, edible fruit of certain plants of the genus Fragaria.",
     "price": 6.39,
-    "quantity": 178
+    "quantity": 178,
+    "keys": [
+      "strawberry",
+      "sweet"
+    ]
+  },
+  {
+    "supplierId": 2,
+    "name": "Tangerine",
+    "description": "Any of several varieties of mandarin oranges.",
+    "price": 4.71,
+    "quantity": 119,
+    "keys": [
+      "tangerine",
+      "of"
+    ]
   },
   {
     "supplierId": 1,
-    "name": "Tangerine",
-    "description": "Any of several varieties of mandarin oranges.",
-    "price": 4.93,
-    "quantity": 119
-  },
-  {
-    "supplierId": 3,
     "name": "Tomato",
     "description": "A widely cultivated plant, Solanum lycopersicum, having edible fruit.",
-    "price": 6.70,
-    "quantity": 167
+    "price": 6.72,
+    "quantity": 167,
+    "keys": [
+      "tomato",
+      "widely"
+    ]
   },
   {
-    "supplierId": 0,
+    "supplierId": 2,
     "name": "Watermelon",
     "description": "A plant of the species Citrullus lanatus, bearing a melon-like fruit.",
-    "price": 6.37,
-    "quantity": 149
+    "price": 6.54,
+    "quantity": 149,
+    "keys": [
+      "watermelon",
+      "plant"
+    ]
   }
 ]
