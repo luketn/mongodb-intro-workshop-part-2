@@ -144,3 +144,8 @@ When to use:
 For more advanced (and better) results on Atlas you can use the Atlas Search (Lucene indexed) feature which is awesome and has lots of good capabilities:
 https://www.mongodb.com/atlas/search
 
+
+#### Wildcard Indexes
+A wildcard index allows you to create an index for dynamically changing data where you don't know the schema upfront. 
+Out of scope for this workshop. Use with extreme caution. 
+
