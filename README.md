@@ -21,7 +21,7 @@ Go [here](0-tools.md) for a quick overview of the simple tools I use when invest
 Go [here](1-indexes.md) for a deep dive into indexes - one of the core fundamental areas to understand to get the best performance from MongoDB.
 
 
-### Additional Reading
+## Additional Reading
 
 MongoDB University Course on Performance:  
 https://university.mongodb.com/courses/M201/about
@@ -32,4 +32,6 @@ https://www.mongodb.com/docs/manual/indexes/
 Sorting tutorial:  
 https://www.mongodb.com/docs/manual/tutorial/sort-results-with-indexes/?jmp=university
 
+Great article on indexing:  
+https://www.dbkoda.com/blog/2017/10/06/Effective-MongoDB-indexing
 
