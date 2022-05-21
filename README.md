@@ -1,39 +1,34 @@
 # mongodb-performance-workshop
 Follow on to mongodb-intro-workshop.
 
-## Examining Performance
+## Setup
+If you don't already have it, follow the setup instructions from the intro workshop:
+https://github.com/luketn/mongodb-intro-workshop#setup
 
-### Tools
+We'll use the same Docker based mongo instance for playing with performance tools and indexes.
 
-... todo - list of tools for examining performance in mongo ...
+In addition, I recommend installing MongoDB Compass:  
+https://www.mongodb.com/docs/compass/current/install/
 
 
-Discuss mongodb performance.  
+## Performance Workshop
 
-### Indexes
--> link indexes.md
+### Part 0 - Performance Investigation Tools
+Go [here](0-tools.md) for a quick overview of the simple tools I use when investigating performance.
 
-Sorting. In memory vs indexed.  
+
+### Part 1 - Indexes Deep Dive
+Go [here](1-indexes.md) for a deep dive into indexes - one of the core fundamental areas to understand to get the best performance from MongoDB.
+
+
+### Additional Reading
+
+MongoDB University Courses:
+
+
+
+Sorting tutorial:  
 https://www.mongodb.com/docs/manual/tutorial/sort-results-with-indexes/?jmp=university
-
-Using explain(), e.g.  
-```
-db.someCollection.find({some: 'thing'}).sort({some:-1}).limit(5).explain('executionStats');
-```
-
-Query planner selection process and execution - examine what the engine does on a local copy of the DB by watching the log output with a higher log level:
-```
-db.setLogLevel(5)
-db.someCollection.find({"some" : "thing"})
-db.setLogLevel(-1)
-```
-
-
-Take a large dataset and query it in optimal and non-optimal ways. Show the effects of different indexes. Discuss the importance of hot indexes being kept in RAM (smaller indexes are more likely to fit in RAM and stay in RAM).
-
-Collection design: document ref / sub document, memory vs disk, cache. Think about the client and query patterns. Ideal scenario is the most common queries return a single document or a small set of data from multiple documents with a single query (as opposed to requiring multiple searches / lookups).  
-
-Memory memory memory - Mongo loves it! Hot indexes must be in memory. 
 
 Use some of the lessons from this;
 https://university.mongodb.com/mercury/M201
