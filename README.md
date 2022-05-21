@@ -23,12 +23,13 @@ Go [here](1-indexes.md) for a deep dive into indexes - one of the core fundament
 
 ### Additional Reading
 
-MongoDB University Courses:
+MongoDB University Course on Performance:  
+https://university.mongodb.com/courses/M201/about
 
-
+Index Documentation:  
+https://www.mongodb.com/docs/manual/indexes/
 
 Sorting tutorial:  
 https://www.mongodb.com/docs/manual/tutorial/sort-results-with-indexes/?jmp=university
 
-Use some of the lessons from this;
-https://university.mongodb.com/mercury/M201
+
