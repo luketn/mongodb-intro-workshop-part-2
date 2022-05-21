@@ -10,7 +10,7 @@ We'll use the same Docker based mongo instance for playing with performance tool
 In addition, I recommend installing MongoDB Compass:  
 https://www.mongodb.com/docs/compass/current/install/
 
-And Robo3T:
+And Robo3T:  
 https://robomongo.org/
 
 
