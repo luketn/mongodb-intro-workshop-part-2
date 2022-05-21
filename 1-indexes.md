@@ -147,5 +147,22 @@ https://www.mongodb.com/atlas/search
 
 #### Wildcard Indexes
 A wildcard index allows you to create an index for dynamically changing data where you don't know the schema upfront. 
-Out of scope for this workshop. Use with extreme caution. 
 
+There are a couple of pretty compelling use-cases for this.
+
+One worth mentioning is when using the attribute pattern. The attribute pattern is where you have a document with properties that are key/value attributes you don't know the keys of upfront like this:
+```
+{
+  "key1": 123,
+  "key2": 321
+}
+```
+
+If you want to allow queries on _one_ of these keys efficiently, you can use a wildcard index:  
+```
+db.fruits.createIndex({'$**': 1})
+```
+
+It is effectively like creating a single-field index on each of the dynamic attribute properties on the document (or a subset of the fields in the document).
+
+Use with extreme caution, as this could easily create massive indexes.
