@@ -2,7 +2,7 @@
 Follow on to mongodb-intro-workshop.
 
 ## Setup
-If you don't already have it, follow the setup instructions from the intro workshop:
+If you don't already have it, follow the setup instructions from the intro workshop:  
 https://github.com/luketn/mongodb-intro-workshop#setup
 
 We'll use the same Docker based mongo instance for playing with performance tools and indexes.
