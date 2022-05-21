@@ -3,6 +3,11 @@ What's a MongoDB index? A b-tree in which the leaf nodes are also like a sorted 
 ![image](https://user-images.githubusercontent.com/1756555/168875467-a6eaed01-5f3c-49ce-9d7d-5a3fdff8959a.png)
 Ref: https://www.dbkoda.com/blog/2017/10/06/Effective-MongoDB-indexing
 
+### Sample Data
+You can insert some sample data for playing with from this file: [fruit.json](./data/fruit.json)  
+```
+db.fruit.insert(... paste data here ...);
+```
 
 ### Equality Sort Range (ESR) Rule
 The ESR rule is about composing indexes. You should always order the fields in an index in that order so that the index can be used efficiently for querying as well as sorting and range queries. 
@@ -10,9 +15,8 @@ The ESR rule is about composing indexes. You should always order the fields in a
 #### Simple (single-field) Indexes
 The simplest, and fastest, index is on a single scalar value. e.g.  
 ```
-{
-  "simpleStringField": 1
-}
+db.fruit.createIndex({name:1}, {name: 'simple_index'})
+db.fruit.find({name: "Apple"}).explain('executionStats')
 ```
 
 What's great about these, is that they are very compact, have no complexity regarding sorting and can are extremely fast to query and to update.
@@ -25,11 +29,8 @@ When to use:
 #### Compound Indexes
 A compound index is an index over multiple scalar value fields. e.g.   
 ```
-{
-  "companyId": 1,
-  "createdDate": -1,
-  "name": 1
-}
+db.fruit.createIndex({supplierId: 1, name: 1}, {name: 'compound_index'});
+db.fruit.find({supplierId:0}).sort({name: 1}).explain('executionStats');
 ```
 
 A compound index is very powerful - but also carries some complexity and risks. 
@@ -48,25 +49,24 @@ When to use:
 - when write performance is less critical than read performance (e.g. when you read more often than write)
 - when you have plenty of overhead in memory (allowing the index to be fully loaded into RAM) and plenty of overhead in CPU (allowing complex operations to be performed on the indexes - sorting and rebalancing trees)
 
+#### Covered Queries
+A super-charge to performance can be achieved by returning only fields within the index from the query. 
+For example:
+```
+db.fruit.find({supplierId:0}, {supplierId: 1, name: 1, _id: 0}).sort({name: 1}).explain('executionStats');
+```
+
+For very commonly performed queries, it's even worth creating an index specifically designed for covered queries, that includes all the fields you need.
+For example if you have a page on a website, and some list which always needs to be fetched live to display on it a covered query may be worth creating. If the index is a compound index though, all of the 'when to use' caveats apply here too, so you may want to use this sparingly.
+
 
 #### Multi-Key Indexes
 A multi-key index is an index on an array field (and possibly more scalar value fields as a compound multi-key index).
 
-e.g. document:
-```
-{
-  "names": [  
-    "Gawain",
-    "Luke",
-    "Thompson"
-  ]
-}
-```
-
 index:
 ```
 {
-  "names": 1
+  "keys": 1
 }
 ```
 
@@ -90,10 +90,10 @@ Ref: https://www.mongodb.com/docs/manual/core/index-partial/?jmp=university
 e.g.
 ```
 {
-  "grade": 1,
+  "price": 1,
 },
 {
-  "partialFilterExpression": {grade: {$gt: 3}}
+  "partialFilterExpression": {price: {$gt: 3}}
 }
 ```
 
@@ -107,7 +107,7 @@ There is a potential risk with partial indexes though, that the index would be i
 include the index filter predicate in order for the index planner to select that index for the search. 
 i.e. in the example above, the query must state $gt: 3 for the index to be used:
 ```
-db.col.find({grade: {$gt: 3}})
+db.col.find({price: {$gt: 3}})
 ```
 
 #### Text Indexes
@@ -119,11 +119,6 @@ This is similar to the multi-key index, in that the words split from the origina
 The search does a logical OR on the words queried with the words in the index.
 
 e.g. 
-Create these documents:
-```
-db.fruits.insert({fruit: "Apple", description:"Crisp, crunchy and delicious"})
-db.fruits.insert({fruit: "Orange", description:"Tart, juicy and delicious"})
-```
 Create this index:
 ```
 db.fruits.createIndex({description: 'text'}, {name: 'text_search'})
