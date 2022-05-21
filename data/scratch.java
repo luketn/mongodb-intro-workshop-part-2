@@ -87,7 +87,7 @@ class Scratch {
                 description = "";
             }
             BigDecimal priceDecimal = new BigDecimal(price).add(new BigDecimal(new Random().nextDouble()));
-            Fruit fruit = new Fruit(Integer.parseInt(id), name, description, priceDecimal.doubleValue(), Integer.parseInt(quantity));
+            Fruit fruit = new Fruit(new Random().nextInt(4), name, description, priceDecimal.doubleValue(), Integer.parseInt(quantity));
             fruits.add(fruit);
         }
         System.out.println(JsonSerialize.serialize(fruits));
@@ -111,7 +111,7 @@ class Scratch {
         }
     }
 
-    public record Fruit (int id, String name, String description, double price, int quantity) {}
+    public record Fruit (int supplierId, String name, String description, double price, int quantity) {}
 
 
     public static class JsonSerialize {
