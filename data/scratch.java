@@ -1,5 +1,6 @@
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
@@ -87,7 +88,8 @@ class Scratch {
                 description = "";
             }
             BigDecimal priceDecimal = new BigDecimal(price).add(new BigDecimal(new Random().nextDouble()));
-            Fruit fruit = new Fruit(new Random().nextInt(4), name, description, priceDecimal.doubleValue(), Integer.parseInt(quantity));
+            String[] keys = new String[]{name, description.split("[\\s,]+")[1]};
+            Fruit fruit = new Fruit(new Random().nextInt(4), name, description, priceDecimal.doubleValue(), Integer.parseInt(quantity), keys);
             fruits.add(fruit);
         }
         System.out.println(JsonSerialize.serialize(fruits));
@@ -111,7 +113,7 @@ class Scratch {
         }
     }
 
-    public record Fruit (int supplierId, String name, String description, double price, int quantity) {}
+    public record Fruit (int supplierId, String name, String description, double price, int quantity, String[] keys) {}
 
 
     public static class JsonSerialize {
@@ -143,7 +145,16 @@ class Scratch {
                     return null;
                 }
                 field.setAccessible(true);
-                if (String.class.equals(type)) {
+                if (type.isArray()) {
+                    String[] value = (String[])field.get(record);
+                    StringBuilder arrayString = new StringBuilder();
+                    arrayString.append("[");
+                    arrayString.append(Arrays.stream(value).map(s->{
+                        return "\"%s\"".formatted(s.toLowerCase());
+                    }).collect(Collectors.joining(",")));
+                    arrayString.append("]");
+                    return "\"%s\":%s".formatted(field.getName(), arrayString.toString());
+                } else if (String.class.equals(type)) {
                     return "\"%s\":\"%s\"".formatted(field.getName(), field.get(record));
                 } else if (boolean.class.equals(type) || Boolean.class.equals(type)) {
                     return "\"%s\":%s".formatted(field.getName(), ((boolean)field.get(record)) ? "true": "false");
